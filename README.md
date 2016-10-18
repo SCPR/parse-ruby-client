@@ -1,3 +1,5 @@
+**QUICK NOTE:** *This has been hacked to work with our own Parse installation for the time being until we move away from using Parse.  Are you sure you want to use this?*
+
 ## Summary
 
 parse-ruby-client lets you interact with Parse using Ruby. There are many uses. For example:

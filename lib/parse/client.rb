@@ -26,10 +26,11 @@ module Parse
       @session_token  = data[:session_token]
       @max_retries    = data[:max_retries] || 3
       @logger         = data[:logger] || Logger.new(STDERR).tap{|l| l.level = Logger::INFO}
+      @protocol       = data[:protocol] || "https"
 
       options = {:request => {:timeout => 30, :open_timeout => 30}}
 
-      @session = Faraday.new("https://#{host}", options) do |c|
+      @session = Faraday.new("#{@protocol}://#{host}", options) do |c|
         c.request :json
 
         c.use Faraday::GetMethodOverride
